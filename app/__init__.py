@@ -6,6 +6,7 @@ import os
 # Import models, blueprints, and anything else needed to set up the app or database
 
 
+
 def create_app(config=None):
     app = Flask(__name__)
 
@@ -17,9 +18,9 @@ def create_app(config=None):
 
     # Initialize app with SQLAlchemy db and Migrate
 
-    # Register Blueprints 
+    # Register Blueprints
     db.init_app(app)
-    migrate.init_app(app)
+    migrate.init_app(app,db)
 
     CORS(app)
     return app
